@@ -1,0 +1,851 @@
+<!--
+Nama  : Difa Asmana
+NIM   : 2404010100008
+Kelas : IF205
+Prodi : PJJ Informatika
+Mata Kuliah : Pemrograman Web I
+Dosen : Riad Sahara, S.SI., M.T.
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Difa Asmana - IT Services Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e6ed;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #0f3460 0%, #0e4b99 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            color: #e0e6ed;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar, .content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-text {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid #0f0f23;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .company {
+            color: #a0a9b8;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .date {
+            color: #667eea;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* Education & Certifications */
+        .edu-item, .cert-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .edu-item h3, .cert-item h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .edu-item .institution, .cert-item .issuer {
+            color: #a0a9b8;
+            margin-bottom: 5px;
+        }
+
+        .edu-item .date, .cert-item .date {
+            color: #667eea;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* Certificate Tabs & Gallery */
+        .cert-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cert-tab {
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            color: #e0e6ed;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cert-tab:hover, .cert-tab.active {
+            background: rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+            transform: translateY(-1px);
+        }
+
+        .cert-content {
+            display: none;
+        }
+
+        .cert-content.active {
+            display: block;
+        }
+
+        .cert-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .cert-placeholder {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 2px dashed rgba(102, 126, 234, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .cert-placeholder i {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .cert-placeholder p {
+            color: #a0a9b8;
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        .cert-placeholder small {
+            color: #667eea;
+            font-size: 0.8em;
+        }
+
+        .cert-card h4 {
+            color: #667eea;
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        .view-cert-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-cert-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Certificate Modal */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .cert-modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            background: rgba(15, 15, 35, 0.95);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .cert-modal img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .cert-modal-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(102, 126, 234, 0.5);
+        }
+
+        .cert-modal-placeholder i {
+            font-size: 4em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .cert-modal-placeholder p {
+            color: #a0a9b8;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .cert-modal-placeholder small {
+            color: #667eea;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: #e0e6ed;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #667eea;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .timeline-item:hover, .edu-item:hover, .cert-item:hover, .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-img">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h1>Difa Asmana</h1>
+                <p class="subtitle">IT Services Management | Lintasarta | Central Jakarta, Indonesia</p>
+                <div class="contact-links">
+                    <a href="mailto:difaasmana@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> difaasmana@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/difaasmana/" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://wa.me/62881023461997" class="contact-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://youtube.com/@asmndfa7532?si=Mw3GF34IjfCU_5jy" class="contact-link" target="_blank">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                    <a href="https://www.instagram.com/asmndfa/" class="contact-link" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Skills Section -->
+                <section class="section">
+                    <h2><i class="fas fa-code"></i> Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>System & Platforms</h3>
+                            <ul class="skill-list">
+                                <li>Windows</li>
+                                <li>Linux</li>
+                                <li>VMware</li>
+                                <li>Microsoft Azure</li>
+                                <li>Windows Server</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Security & Tools</h3>
+                            <ul class="skill-list">
+                                <li>Trend Micro AV</li>
+                                <li>Oracle Database</li>
+                                <li>Microsoft Exchange</li>
+                                <li>Microsoft Office</li>
+                                <li>Video Conferencing</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Soft Skills</h3>
+                            <ul class="skill-list">
+                                <li>Communication</li>
+                                <li>Problem Solving</li>
+                                <li>IT Support</li>
+                                <li>Documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="edu-item">
+                        <h3>BSc in Informatics</h3>
+                        <div class="institution">Asia Cyber University</div>
+                        <div class="date">2024 - 2028</div>
+                    </div>
+                    <div class="edu-item">
+                        <h3>Computer & Network Engineering</h3>
+                        <div class="institution">SMK Teknologi Industri Pembangunan</div>
+                        <div class="date">2018 - 2021</div>
+                    </div>
+                </section>
+
+                <!-- Certifications Section -->
+                <section class="section">
+                    <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                    
+                    <!-- Certificate Tabs -->
+                    <div class="cert-tabs">
+                        <button class="cert-tab active" onclick="showCertTab('list')">
+                            <i class="fas fa-list"></i> List View
+                        </button>
+                        <button class="cert-tab" onclick="showCertTab('gallery')">
+                            <i class="fas fa-images"></i> Certificate Gallery
+                        </button>
+                    </div>
+
+                    <!-- Certificate List View -->
+                    <div id="cert-list" class="cert-content active">
+                        <div class="cert-item">
+                            <h3>Fundamentals of AI</h3>
+                            <div class="issuer">Dicoding</div>
+                            <div class="date">2024 - 2027</div>
+                            <button class="view-cert-btn" onclick="viewCertificate('ai-cert')">
+                                <i class="fas fa-eye"></i> View Certificate
+                            </button>
+                        </div>
+                        <div class="cert-item">
+                            <h3>DevOps Fundamentals</h3>
+                            <div class="issuer">Dicoding</div>
+                            <div class="date">2024 - 2027</div>
+                            <button class="view-cert-btn" onclick="viewCertificate('devops-cert')">
+                                <i class="fas fa-eye"></i> View Certificate
+                            </button>
+                        </div>
+                        <div class="cert-item">
+                            <h3>Cybersecurity (Talent Scouting Academy)</h3>
+                            <div class="issuer">Digital Talent Scholarship</div>
+                            <div class="date">2024</div>
+                            <button class="view-cert-btn" onclick="viewCertificate('cyber-cert')">
+                                <i class="fas fa-eye"></i> View Certificate
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Gallery View -->
+                    <div id="cert-gallery" class="cert-content">
+                        <div class="cert-gallery-grid">
+                            <div class="cert-card" onclick="viewCertificate('ai-cert')">
+                                <div class="cert-placeholder" id="ai-cert-img">
+                                    <i class="fas fa-robot"></i>
+                                    <p>AI Certification</p>
+                                    <small>Click to view full certificate</small>
+                                </div>
+                                <h4>Fundamentals of AI</h4>
+                            </div>
+                            <div class="cert-card" onclick="viewCertificate('devops-cert')">
+                                <div class="cert-placeholder" id="devops-cert-img">
+                                    <i class="fas fa-cogs"></i>
+                                    <p>DevOps Certification</p>
+                                    <small>Click to view full certificate</small>
+                                </div>
+                                <h4>DevOps Fundamentals</h4>
+                            </div>
+                            <div class="cert-card" onclick="viewCertificate('cyber-cert')">
+                                <div class="cert-placeholder" id="cyber-cert-img">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <p>Cybersecurity Certification</p>
+                                    <small>Click to view full certificate</small>
+                                </div>
+                                <h4>Cybersecurity</h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="content">
+                <!-- About Section -->
+                <section class="section">
+                    <h2><i class="fas fa-user-circle"></i> About Me</h2>
+                    <div class="about-text">
+                        I am currently employed as an Internal IT Support at Lintasarta, where I am responsible for maintaining, troubleshooting, and optimizing the company's internal IT systems. My experience includes network infrastructure, hardware and software support, and delivering technical assistance to employees.
+                        <br><br>
+                        I am also pursuing a Bachelor's degree in Informatics Engineering at Asia Cyber University. I am passionate about learning new technologies and continuously improving IT operations through innovation and efficiency.
+                    </div>
+                </section>
+
+                <!-- Professional Experience Section -->
+                <section class="section">
+                    <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>IT Services Management</h3>
+                            <div class="company">Lintasarta</div>
+                            <div class="date">Jan 2023 - Present</div>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>IT Infrastructure Technician Coordinator</h3>
+                            <div class="company">Lintasarta</div>
+                            <div class="date">Jan 2023 - Jun 2023</div>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>IT Infrastructure</h3>
+                            <div class="company">Lintasarta</div>
+                            <div class="date">Jan 2022 - Jan 2023</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Difa Asmana. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="cert-modal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="close-modal" onclick="closeCertModal()">&times;</span>
+            <div id="cert-modal-body">
+                <!-- Certificate content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Certificate Management
+        const certificates = {
+            'ai-cert': {
+                title: 'Fundamentals of AI - Dicoding',
+                image: 'certificates/ai-fundamentals.jpg', // Path will be updated after upload
+                hasImage: false
+            },
+            'devops-cert': {
+                title: 'DevOps Fundamentals - Dicoding',
+                image: 'certificates/devops-fundamentals.jpg',
+                hasImage: false
+            },
+            'cyber-cert': {
+                title: 'Cybersecurity - Digital Talent Scholarship',
+                image: 'certificates/cybersecurity.jpg',
+                hasImage: false
+            }
+        };
+
+        // Tab switching functionality
+        function showCertTab(tabName) {
+            // Hide all content
+            document.querySelectorAll('.cert-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active from all tabs
+            document.querySelectorAll('.cert-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById(`cert-${tabName}`).classList.add('active');
+            
+            // Add active to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // View certificate functionality
+        function viewCertificate(certId) {
+            const cert = certificates[certId];
+            const modal = document.getElementById('cert-modal');
+            const modalBody = document.getElementById('cert-modal-body');
+            
+            if (cert.hasImage) {
+                modalBody.innerHTML = `
+                    <h3 style="color: #667eea; margin-bottom: 20px;">${cert.title}</h3>
+                    <img src="${cert.image}" alt="${cert.title}" style="max-width: 100%; height: auto;">
+                `;
+            } else {
+                modalBody.innerHTML = `
+                    <h3 style="color: #667eea; margin-bottom: 20px;">${cert.title}</h3>
+                    <div class="cert-modal-placeholder">
+                        <i class="fas fa-certificate"></i>
+                        <p>Certificate image not uploaded yet</p>
+                        <small>Follow the tutorial to upload certificate images</small>
+                    </div>
+                `;
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        // Close modal
+        function closeCertModal() {
+            document.getElementById('cert-modal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('cert-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
