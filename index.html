@@ -1,0 +1,176 @@
+<!--
+Nama  : Difa Asmana
+NIM   : 2404010100008
+Kelas : IF205
+Prodi : PJJ Informatika
+Mata Kuliah : Pemrograman Web I
+Dosen : Riad Sahara, S.SI., M.T.
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difa Asmana - IT Professional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-img">
+                    <img src="profile.jpg" alt="Foto Profil" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <h1>Difa Asmana</h1>
+                <p class="subtitle"><u>IT Services Management</u> | <b>Lintasarta</b> | Central Jakarta, Indonesia</p>
+                <div class="contact-links">
+                    <a href="mailto:difaasmana@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> difaasmana@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/difaasmana/" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://wa.me/62881023461997" class="contact-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Skills Section -->
+                <section class="section">
+                    <h2><i class="fas fa-code"></i> <u>Skills</u></h2>
+                    <table class="skills-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Skills</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-category"><b>System & Platforms</b></td>
+                                <td>Windows, Linux, VMware, Microsoft Azure, Windows Server</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-category"><b>Security & Tools</b></td>
+                                <td>Trend Micro AV, Oracle Database, Microsoft Exchange, Microsoft Office, Video Conferencing</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-category"><b>Soft Skills</b></td>
+                                <td>Communication, Problem Solving, IT Support, Documentation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section">
+                    <h2><i class="fas fa-graduation-cap"></i> <u>Education</u></h2>
+                    <div class="edu-item">
+                        <h3>BSc in <u>Informatics</u></h3>
+                        <div class="institution"><b>Asia Cyber University</b></div>
+                        <div class="date">2024 - 2028</div>
+                    </div>
+                    <div class="edu-item">
+                        <h3>Computer & <u>Network Engineering</u></h3>
+                        <div class="institution"><b>SMK Teknologi Industri Pembangunan</b></div>
+                        <div class="date">2018 - 2021</div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="content">
+                <!-- About Section -->
+                <section class="section">
+                    <h2><i class="fas fa-user-circle"></i> <u>About Me</u></h2>
+                    <div class="about-text">
+                        <p>I am currently employed as an <b>Internal IT Support</b> at <u>Lintasarta</u>, where I am responsible for maintaining, troubleshooting, and optimizing the company's internal IT systems. My experience includes <b>network infrastructure</b>, hardware and software support, and delivering technical assistance to employees.</p>
+                        <br>
+                        <p>I am also pursuing a <b>Bachelor's degree</b> in <u>Informatics Engineering</u> at <b>Asia Cyber University</b>. I am passionate about learning new technologies and continuously improving IT operations through innovation and efficiency.</p>
+                    </div>
+                </section>
+
+                <!-- Professional Experience Section -->
+                <section class="section">
+                    <h2><i class="fas fa-briefcase"></i> <u>Professional Experience</u></h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3><u>IT Services Management</u></h3>
+                            <div class="company"><b>Lintasarta</b></div>
+                            <div class="date">Jan 2023 - Present</div>
+                            <p class="about-text">Managing IT services and infrastructure for <b>enterprise clients</b>.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3><u>IT Infrastructure Technician Coordinator</u></h3>
+                            <div class="company"><b>Lintasarta</b></div>
+                            <div class="date">Jan 2023 - Jun 2023</div>
+                            <p class="about-text">Coordinated <b>infrastructure maintenance</b> and troubleshooting.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3><u>IT Infrastructure</u></h3>
+                            <div class="company"><b>Lintasarta</b></div>
+                            <div class="date">Jan 2022 - Jan 2023</div>
+                            <p class="about-text">Supported <b>IT infrastructure operations</b> and maintenance.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications Section -->
+                <section class="section">
+                    <h2><i class="fas fa-certificate"></i> <u>Certifications</u></h2>
+                    <div class="cert-item">
+                        <h3><u>Fundamentals of AI</u></h3>
+                        <div class="issuer"><b>Dicoding</b></div>
+                        <div class="date">2024 - 2027</div>
+                        <button class="view-cert-btn" onclick="viewCertificate('ai-cert')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                    <div class="cert-item">
+                        <h3><u>DevOps Fundamentals</u></h3>
+                        <div class="issuer"><b>Dicoding</b></div>
+                        <div class="date">2024 - 2027</div>
+                        <button class="view-cert-btn" onclick="viewCertificate('devops-cert')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                    <div class="cert-item">
+                        <h3><u>Cybersecurity (Talent Scouting Academy)</u></h3>
+                        <div class="issuer"><b>Digital Talent Scholarship</b></div>
+                        <div class="date">2024</div>
+                        <button class="view-cert-btn" onclick="viewCertificate('cyber-cert')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 <b>Difa Asmana</b>. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="cert-modal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="close-modal" onclick="closeCertModal()">&times;</span>
+            <div id="cert-modal-body">
+                <!-- Certificate content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
